@@ -3,6 +3,17 @@
 # cordova-plugin-firebase
 This plugin brings push notifications, analytics, event tracking, crash reporting and more from Google Firebase to your Cordova project!  Android and iOS supported.
 
+## This Fork (7/19/2019)
+
+Fixed the problem with XCODE build errors that arose with this plugin and Cordova 9.
+
+1. Install xcode: npm i xcode --save-dev
+2. Edit the plugin file locally plugins/cordova-plugin-firebase/scripts/ios/helper.js
+3. Add var xcode = require("xcode"); on top
+4. Then in the same file, just remove this line var xcode = context.requireCordovaModule("xcode");. You must find two occurrence of this line.
+
+See https://github.com/arnesson/cordova-plugin-firebase/issues/1033 for details.
+
 ## Supported Cordova Versions
 - cordova: `>= 6`
 - cordova-android: `>= 6.4`
